@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M.Sc Data Science Student Profiles</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.0/xlsx.full.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Font Awesome CDN -->
+    <!-- icofont CSS -->
+    <link rel="stylesheet" href="css/icofont.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    
+</head>
+<body>
+
+
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <img src="assets/CHRIST_WHITE.png" alt="University Logo">
+        </div>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="hamburger">&#9776;</label>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#student-profiles">Student Profiles</a></li>
+            <li><a href="#recruiters">Persistent Recruiters</a></li>
+            <li><a href="#contact-details">Contact Us</a></li>
+        </ul>
+        <div class="actions">
+            <button onclick="window.location.href='recruit_form.html'">Recruit Students</button>
+            <button onclick="downloadBrochure()">Download Brochure</button>
+        </div>
+    </nav>
+    
+<!-- Slider section -->
+    <section id="home" class="slider">
+        <div class="slide active">
+            <img src="assets/MDS_group_pic.jpg" alt="Slide 1">
+            <div class="text-overlay">
+                <h2>Class of M.Sc Data Science 2023-25</h2>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="assets/Campus_Main_Entrance.jpg" alt="Slide 2">
+            <div class="text-overlay">
+                <h2>Christ (Deemed to be) University - Bangalore Yeshwanthpur Campus</h2>
+            </div>
+        </div>
+        
+        <div class="slider-controls">
+            <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
+            <span class="next" onclick="changeSlide(1)">&#10095;</span>
+        </div>
+    </section>
+    
+    
+
+  
+
+<section id="about">
+    <h1>About the Program</h1>
+    <div class="about-section">
+        <div class="about-item">
+            <div class="icon">
+                <i class="fas fa-university"></i>
+            </div>
+            <h2>About Christ University</h2>
+            <p><strong>Vision:</strong> Excellence and Service</p>
+            <p><strong>Mission:</strong> CHRIST (Deemed to be University) is a nurturing ground for an individual's holistic development to make effective contribution to the society in a dynamic environment.</p>
+            <p><strong>Core Values:</strong></p>
+            <ul>
+                <li>Faith in God</li>
+                <li>Moral Uprightness</li>
+                <li>Love of Fellow Beings</li>
+                <li>Social Responsibility</li>
+                <li>Pursuit of Excellence</li>
+            </ul>
+        </div>
+        <div class="about-item">
+            <div class="icon">
+                <i class="fas fa-school"></i>
+            </div>
+            <h2>About the Bangalore Yeshwanthpur Campus</h2>
+            <p>Upholding the Vision, Excellence and Service and realizing the Mission through holistic education and inculcating Core Values, CHRIST Yeshwanthpur Campus with innovative and contemporary curricula and pedagogy and a refreshing environment conducive to teaching, learning, and research aim to create holistic individuals.</p>
+            <p>It is 10 stories with over sixteen lakhs square feet, a space where architecture, technology and art merge, creating a future-focused learning environment next door to Dasrahalli/Nagasandra Metro Stations on Tumkur Road, 5 kms from Yeswanthpur Railway station, and started functioning from August 2022.</p>
+        </div>
+    </div>
+    <div class="about-section">
+        <div class="about-item">
+            <div class="icon">
+                <i class="fas fa-laptop-code"></i>
+            </div>
+            <h2>About MSc Data Science Programme of 2023-25</h2>
+            <p>The Master of Data Science (MDS) is a postgraduate program that combines computer science and statistics to foster proficiency in data-driven decision-making. It is a two-year course comprising six trimesters.</p>
+            <p>This programme aims to provide opportunity to all candidates to master the skill sets specific to data science with research bent. The curriculum supports the students to obtain adequate knowledge in theory of data science with hands on experience in relevant domains and tools. Candidate gains exposure to research models and industry standard applications in data science through guest lectures, seminars, projects, internships, etc.</p>
+        </div>
+        <div class="about-item">
+            <div class="icon">
+                <i class="fas fa-briefcase"></i>
+            </div>
+            <h2>Industry Connect</h2>
+             <!-- Industry Connect Slider -->
+    <div class="industry-slider">
+        <div class="industry-slide">
+            <img src="assets/inheritance1.jpg" alt="Industry Image 1">
+            <div class="slide-description">
+                <h3>Inheritance</h3>
+                <p>A mentorship scheme aimed at fostering students to imbibe 
+                    exposure to the industry and for bridging the gap between corporate and academia </p>
+            </div>
+        </div>
+        <div class="industry-slide">
+            <img src="assets/Pragati1.jpg" alt="Industry Image 2">
+            <div class="slide-description">
+                <h3>Pragati Path to future</h3>
+                <p>An exclusive program designed especially for women for career development</p>
+            </div>
+        </div>
+        <div class="industry-slide">
+            <img src="assets/Workshop.jpeg" alt="Industry Image 3">
+            <div class="slide-description">
+                <h3>Workshops</h3>
+                <p>We invite industry professionals to conduct workshops on various tools and technologies that are widely used in the industries.</p>
+            </div>
+        </div>
+        <!-- Add more slides as needed -->
+        <div class="industry-slider-controls">
+            <span class="prev">&#10094;</span>
+            <span class="next">&#10095;</span>
+        </div>
+    </div>
+    
+
+
+        </div>
+    </div>
+    
+</section>
+
+
+
+ <!-- Student profiles -->   
+
+<div id="student-profiles">
+    <h1>Student Profiles</h1>
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search by name, specialization, skills...">
+        <button id="search-button"><i class="fas fa-search"></i></button>
+    </div>
+    <div id="profiles-container" class="profiles-container">
+
+    </div>
+</div> 
+
+  
+    
+     <!-- Persistent Recruiters Section -->
+     <section id="recruiters">
+        <h1 class="text-center">Our Persistent Recruiters</h1>
+        <div class="slick marquee">
+                <div class="slick-slide">
+                    <div class="inner">
+                        <img src="assets/company_logos/2560px-Eurofins_Scientific_Logo.svg.png" alt="Placeholder" height="78">
+                    </div>
+                </div>
+            
+                <div class="slick-slide">
+                    <div class="inner">
+                        <img src="assets/company_logos/1409565391575110636_1409565391575110636-removebg-preview.png"
+                            alt="Placeholder" height="78">
+                    </div>
+                </div>
+            
+                <div class="slick-slide">
+                    <div class="inner">
+                        <img src="assets/company_logos/580b57fcd9996e24bc43c4a1.png" alt="Placeholder" height="78">
+                    </div>
+                </div>
+            
+                <div class="slick-slide">
+                    <div class="inner">
+                        <img src="assets/company_logos/5add80b5165215fa247d.png" alt="Placeholder" height="78">
+                    </div>
+                </div>
+            
+                <div class="slick-slide">
+                    <div class="inner">
+                        <img src="assets/company_logos/629a09b5b04c5ae587c411bb.png" alt="Placeholder" height="78">
+                    </div>
+                </div>
+            
+                <div class="slick-slide">
+                    <div class="inner">
+                        <img src="assets/company_logos/Bi2i-with-bg-logo-removebg-preview.png" alt="Placeholder" height="78">
+                    </div>
+                </div>
+            
+                <div class="slick-slide">
+                    <div class="inner">
+                        <img src="assets/company_logos/Citi.svg.png" alt="Placeholder" height="78">
+                    </div>
+                </div>
+            
+                <div class="slick-slide">
+                    <div class="inner">
+                        <img src="assets/company_logos/consilio-vector-logo-removebg-preview.png" alt="Placeholder" height="78">
+                    </div>
+                </div>
+            
+                <div class="slick-slide">
+                    <div class="inner">
+                        <img src="assets/company_logos/D._E._Shaw_&amp;_Co._logo.png" alt="Placeholder" height="78">
+                    </div>
+                </div>
+            
+                <div class="slick-slide">
+                    <div class="inner">
+                        <img src="assets/company_logos/download-removebg-preview (1).png" alt="Placeholder" height="78">
+                    </div>
+                </div>
+            
+                <div class="slick-slide">
+                    <div class="inner">
+                        <img src="assets/company_logos/download-removebg-preview.png" alt="Placeholder" height="78">
+                    </div>
+                </div>
+            
+                <div class="slick-slide">
+                    <div class="inner">
+                        <img src="assets/company_logos/grant-thornton-vector-logo-removebg-preview.png" alt="Placeholder"
+                            height="78">
+                    </div>
+                </div>
+            
+                <div class="slick-slide">
+                    <div class="inner">
+                        <img src="assets/company_logos/hsbc-logo-1.png" alt="Placeholder" height="78">
+                    </div>
+                </div>
+            
+                <div class="slick-slide">
+                    <div class="inner">
+                        <img src="assets/company_logos/IHS_Markit_logo.svg.png" alt="Placeholder" height="78">
+                    </div>
+                </div>
+            
+                <div class="slick-slide">
+                    <div class="inner">
+                        <img src="assets/company_logos/image-removebg-preview.png" alt="Placeholder" height="78">
+                    </div>
+                </div>
+            
+                <div class="slick-slide">
+                    <div class="inner">
+                        <img src="assets/company_logos/KPMG_logo.svg.png" alt="Placeholder" height="78">
+                    </div>
+                </div>
+            
+                <div class="slick-slide">
+                    <div class="inner">
+                        <img src="assets/company_logos/Kritter-Full-Logo-Transparent-Background.png" alt="Placeholder" height="78">
+                    </div>
+                </div>
+            
+                <div class="slick-slide">
+                    <div class="inner">
+                        <img src="assets/company_logos/MiQ_Logo-removebg-preview.png" alt="Placeholder" height="78">
+                    </div>
+                </div>
+            
+                <div class="slick-slide">
+                    <div class="inner">
+                        <img src="assets/company_logos/Perficient-Logo-HorzJPG-removebg-preview.png" alt="Placeholder" height="78">
+                    </div>
+                </div>
+            
+                <div class="slick-slide">
+                    <div class="inner">
+                        <img src="assets/company_logos/PRNE_Xoriant_Logo-removebg-preview.png" alt="Placeholder" height="78">
+                    </div>
+                </div>
+            
+                <div class="slick-slide">
+                    <div class="inner">
+                        <img src="assets/company_logos/quantiphi-inc-logo-vector-removebg-preview.png" alt="Placeholder"
+                            height="78">
+                    </div>
+                </div>
+            
+                <div class="slick-slide">
+                    <div class="inner">
+                        <img src="assets/company_logos/Syscloud_logo@2x.3ca6252c8cc99a8ffc85e4e2c6e6c1da225a3c48.png"
+                            alt="Placeholder" height="78">
+                    </div>
+                </div>
+            
+                <div class="slick-slide">
+                    <div class="inner">
+                        <img src="assets/company_logos/TOSHIBA_Logo.png" alt="Placeholder" height="78">
+                    </div>
+                </div>
+            
+                <div class="slick-slide">
+                    <div class="inner">
+                        <img src="assets/company_logos/Whatfix_Logo_RGB_Color.png" alt="Placeholder" height="78">
+                    </div>
+                </div>
+        </div>
+        </section>
+            
+        </div>
+    </section>
+
+
+     <!-- Footer -->
+     <footer class="footer" id="contact-details">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Christ (Deemed to be University)</h3>
+                <p><b>Department of Computer Science</b><br />
+                    School of Sciences<br />
+                    Bangalore Yeshwanthpur Campus</p>
+                <i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;&nbsp;<a
+                    href="https://goo.gl/maps/Ne8HnRegdWst9AeWA"
+                    class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                    target="_blank" rel="noopener noreferrer">Reach the Campus</a>
+            </div>
+            <div class="footer-contact">
+                <div class="contact-person">
+                    <h4>Connect with us</h4>
+                    <p><i class="fa-solid fa-arrow-up-right-from-square"></i>&nbsp;&nbsp;&nbsp;<a href="#" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover">Interested in recruiting?</a></p>
+                    <p><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;&nbsp;<a
+                            href="mailto:cs.placements@christuniversity.in"
+                            class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">cs.placements@christuniversity.in</a>
+                    </p>
+                </div>
+                <div class="contact-person">
+                    <h4>Dr. Vinay M</h4>
+                    <p><i class="fa-solid fa-phone"></i>&nbsp;&nbsp;&nbsp;+91 99863 88234</p>
+                    <p><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;&nbsp;<a
+                            href="mailto:vinay.m@christuniversity.in"
+                            class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">vinay.m@christuniversity.in</a>
+                    </p>
+                </div>
+                <div class="contact-person">
+                    <h4>Dr. Gobinath R</h4>
+                    <p><i class="fa-solid fa-phone"></i>&nbsp;&nbsp;&nbsp;+91 99946 22574</p>
+                    <p><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;&nbsp;<a
+                            href="mailto:gobinath.r@christuniversity.in"
+                            class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">gobinath.r@christuniversity.in</a>
+                    </p>
+                </div>
+                <div class="contact-person">
+                    <h4>Dr. Balakrishnan C</h4>
+                    <p><i class="fa-solid fa-phone"></i>&nbsp;&nbsp;&nbsp;+91 98657 82529</p>
+                    <p><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;&nbsp;<a
+                            href="mailto:balakrishnan.c@christuniversity.in"
+                            class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">balakrishnan.c@christuniversity.in</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 CHRIST (Deemed to be University)
+        </div>
+    </footer>
+
+
+    <!-- Contact Us Section -->
+    <!-- <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: contact@datascienceprogram.edu</p>
+        <p>Phone: +123 456 7890</p>
+    </section> -->
+
+    <!-- <iframe
+src="https://www.chatbase.co/chatbot-iframe/cpWJklOAcYcQFrJqRKqki"
+width="100%"
+style="height: 100%; min-height: 700px"
+frameborder="0"
+></iframe>
+    
+   
+
+    <script>
+        window.embeddedChatbotConfig = {
+        chatbotId: "cpWJklOAcYcQFrJqRKqki",
+        domain: "www.chatbase.co"
+        }
+        </script>
+        <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="cpWJklOAcYcQFrJqRKqki"
+        domain="www.chatbase.co"
+        defer>
+        </script>
+     -->
+    <!-- Chatbot -->
+   
+
+    <!-- <div id="chatbot" style="display: none;">
+        <div id="chatbox">
+            <div id="chatlogs">
+                
+            </div>
+            <input type="text" id="userInput" placeholder="Ask me anything...">
+            <button onclick="sendMessage()">Send</button>
+            <button onclick="toggleChatbot()">Close Chat</button>
+        </div>
+    </div> -->
+
+    <script src="script.js"></script>
+</body>
+</html>
+

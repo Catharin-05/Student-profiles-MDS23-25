@@ -348,9 +348,9 @@ const ctx = document.getElementById('canvas').getContext('2d');
         const chartContext = document.getElementById('doughnutChartCanvas').getContext('2d');
 
         const doughnutData = {
-            labels: ['Python', 'SQL', 'R', 'MongoDB', 'Excel', 'Power BI', 'Java'],
+            labels: ['Python', 'SQL', 'R', 'Web Development', 'Excel', 'Power BI', 'Java', 'Tableau', 'C/C++', 'AWS/Azure'],
             datasets: [{
-                data: [40, 30, 35, 25, 20, 15, 28],  // Number of students skilled in each technology
+                data: [119, 116, 117, 17, 42, 97, 9, 28, 62, 16],  // Number of students skilled in each technology
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.5)',
                     'rgba(54, 162, 235, 0.5)',
@@ -358,7 +358,11 @@ const ctx = document.getElementById('canvas').getContext('2d');
                     'rgba(255, 206, 86, 0.5)',
                     'rgba(153, 102, 255, 0.5)',
                     'rgba(255, 159, 64, 0.5)',
-                    'rgba(201, 203, 207, 0.5)'
+                    'rgba(201, 203, 207, 0.5)',
+                    'rgba(50, 203, 207, 0.5)',
+                    'rgba(235, 99, 132, 0.5)',
+                    'rgba(135, 99, 132, 0.5)'
+                    
                 ],
                 // borderColor: [
                 //     'rgba(255, 99, 132, 1)',

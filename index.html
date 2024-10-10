@@ -6,9 +6,12 @@
     <title>M.Sc Data Science Student Profiles</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.0/xlsx.full.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Font Awesome CDN -->
+    
+
     <!-- icofont CSS -->
     <link rel="stylesheet" href="css/icofont.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -154,9 +157,24 @@
     </div>
     
 </section>
+<div id="About-Class">
+<h1>About the class of MDS 2023-25</h1>
+<div id="infographics">
+    
+    <div id="chart">
+        <h2>Specializations</h2>
+        <canvas id="canvas" width="700" height="500"></canvas>
+    </div>
+    <div id="chart">
+        <h2>Skillsets</h2>
+        <canvas id="doughnutChartCanvas" width="400" height="100"></canvas>
+    </div>
+
+</div>
 
 
 
+</div>
  <!-- Student profiles -->   
 
 <div id="student-profiles">

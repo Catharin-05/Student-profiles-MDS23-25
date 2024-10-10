@@ -551,8 +551,49 @@ General Section Styling
         padding: 15px;
     }
 }
-/* Profile Grid Styles */
 
+canvas {
+    max-width: 800px;
+    margin: auto;
+}
+
+
+ /* Container for both charts */
+ #infographics {
+    display: flex;            /* Use flexbox for side-by-side layout */
+    justify-content: space-between; /* Space between the charts */
+    align-items: center;      /* Center items vertically */
+    margin: 20px;            /* Add some margin around the container */
+}
+
+/* Individual chart styling */
+#chart {
+    flex: 1;                  /* Allow each chart to take equal space */
+    text-align: center;       /* Center the heading */
+    margin: 0 20px;          /* Add some margin between charts */
+    
+}
+
+/* Responsive adjustments */
+@media (max-width: 800px) {
+    #infographics {
+        flex-direction: column; /* Stack charts vertically on smaller screens */
+    }
+    #chart {
+        margin: 20px 0;        /* Add margin between stacked charts */
+    }
+}
+#About-Class{
+    padding: 40px 20px;
+    
+}
+#About-Class h1{
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+
+}
 #student-profiles {
     padding: 40px 20px;
     background-color: #f9f9f9;

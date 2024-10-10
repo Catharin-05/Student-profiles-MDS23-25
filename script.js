@@ -1,3 +1,22 @@
+function downloadBrochure() {
+    // Create an invisible anchor element
+    const brochureLink = document.createElement('a');
+    
+    // Specify the file URL
+    brochureLink.href = 'path-to-your-brochure.pdf';  // Replace with the actual path to your brochure file
+    
+    // Set the download attribute with the file name you want to save as
+    brochureLink.download = 'Brochure.pdf';  // Replace with desired filename
+    
+    // Append the anchor to the document body (necessary for Firefox)
+    document.body.appendChild(brochureLink);
+    
+    // Programmatically click the anchor to trigger the download
+    brochureLink.click();
+    
+    // Remove the anchor from the DOM after the click
+    document.body.removeChild(brochureLink);
+}
 
 document.addEventListener('DOMContentLoaded', function () {
     let currentSlide = 0;
@@ -238,3 +257,151 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.industry-slider-controls .next').addEventListener('click', nextSlide);
     document.querySelector('.industry-slider-controls .prev').addEventListener('click', prevSlide);
 });
+
+
+
+const ctx = document.getElementById('canvas').getContext('2d');
+        
+        const data = {
+            labels: [
+                'Internet of Things', 
+                'Graph Analytics', 
+                'Natural Language Processing',
+                'Geospatial Data Analytics', 
+                'Image and Video Analytics',
+                'Quantum Machine Learning', 
+                'Reinforcement Learning',
+                'Categorical Variables', 
+                'Multivariate Analysis', 
+                'Stochastic Processes', 
+                'Bio-Statistics', 
+                'Econometrics'
+            ],
+            datasets: [
+                {
+                    label: 'Data Science Technologies Elective 1',
+                    data: [39, 41, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    
+                   
+                },
+                {
+                    label: 'Data Science Technologies Elective 2',
+                    data: [0, 0, 0, 10, 10, 0, 0, 0, 0, 0, 0, 0],
+                    backgroundColor: 'rgba(153, 102, 255, 0.5)',
+                    
+                },
+                {
+                    label: 'Data Science Technologies Elective 3',
+                    data: [0, 0, 0, 0, 0, 10, 10, 0, 0, 0, 0, 0],
+                    backgroundColor: 'rgba(173, 88, 145, 0.5)',
+                   
+                },
+                {
+                    label: 'Statistics Elective 1',
+                    data: [0, 0, 0, 0, 0, 0, 0, 41, 40, 42, 0, 0],
+                    backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                    
+                },
+                {
+                    label: 'Statistics Elective 2',
+                    data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 54, 60],
+                    backgroundColor: 'rgba(255, 206, 86, 0.5)',
+                    
+                }
+            ]
+        };
+
+
+        const groupedBarChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: {
+                responsive: true,
+                layout: {
+                    padding: {
+                        left: 20,  // Increase padding on the left
+                        right: 20  // Increase padding on the right
+                    }
+                },
+                scales: {
+                    x: {
+                        stacked: false,
+                        
+                        
+                    },
+                    y: {
+                        beginAtZero: true,
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top'
+                    }
+                },
+                
+            }
+        });
+
+
+        const chartContext = document.getElementById('doughnutChartCanvas').getContext('2d');
+
+        const doughnutData = {
+            labels: ['Python', 'SQL', 'R', 'MongoDB', 'Excel', 'Power BI', 'Java'],
+            datasets: [{
+                data: [40, 30, 35, 25, 20, 15, 28],  // Number of students skilled in each technology
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(75, 192, 192, 0.5)',
+                    'rgba(255, 206, 86, 0.5)',
+                    'rgba(153, 102, 255, 0.5)',
+                    'rgba(255, 159, 64, 0.5)',
+                    'rgba(201, 203, 207, 0.5)'
+                ],
+                // borderColor: [
+                //     'rgba(255, 99, 132, 1)',
+                //     'rgba(54, 162, 235, 1)',
+                //     'rgba(75, 192, 192, 1)',
+                //     'rgba(255, 206, 86, 1)',
+                //     'rgba(153, 102, 255, 1)',
+                //     'rgba(255, 159, 64, 1)',
+                //     'rgba(201, 203, 207, 1)'
+                // ],
+                borderWidth: 1
+            }]
+        };
+
+        const doughnutChart = new Chart(chartContext, {
+            type: 'doughnut',
+            data: doughnutData,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.label || '';
+                                const students = context.raw;
+                                return `${label}: ${students} students`;
+                            }
+                        }
+                    },
+                    datalabels: {
+                        color: '#fff',
+                        formatter: (value, context) => {
+                            const total = context.chart.data.datasets[0].data.reduce((acc, val) => acc + val, 0);
+                            const percentage = ((value / total) * 100).toFixed(2) + '%';
+                            return percentage;  // Display the percentage
+                        },
+                        anchor: 'center',  // Center the label in the slice
+                        align: 'center'    // Align the label in the center
+                    }
+                }
+            },
+            plugins: [ChartDataLabels]  // Register the datalabels plugin
+        });

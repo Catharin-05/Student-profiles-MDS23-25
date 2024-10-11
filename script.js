@@ -3,7 +3,7 @@ function downloadBrochure() {
     const brochureLink = document.createElement('a');
     
     // Specify the file URL
-    brochureLink.href = 'path-to-your-brochure.pdf';  // Replace with the actual path to your brochure file
+    brochureLink.href = 'assets/Placement Brochure MDS25.pdf';  // Replace with the actual path to your brochure file
     
     // Set the download attribute with the file name you want to save as
     brochureLink.download = 'Brochure.pdf';  // Replace with desired filename
